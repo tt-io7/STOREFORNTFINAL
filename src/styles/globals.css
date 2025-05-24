@@ -2,6 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -35,8 +37,8 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    border: 1px solid #212121;
-    -webkit-text-fill-color: #212121;
+    border: 1px solid #3B82F6;
+    -webkit-text-fill-color: #1F2937;
     -webkit-box-shadow: 0 0 0px 1000px #fff inset;
     transition: background-color 5000s ease-in-out 0s;
   }
@@ -55,7 +57,15 @@
   }
 
   .contrast-btn {
-    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+    @apply px-4 py-2 border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors duration-200 ease-in;
+  }
+  
+  .primary-btn {
+    @apply px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors duration-200 ease-in;
+  }
+  
+  .secondary-btn {
+    @apply px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary-dark transition-colors duration-200 ease-in;
   }
 
   .text-xsmall-regular {
@@ -108,5 +118,17 @@
 
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
+  }
+  
+  .heading-1 {
+    @apply font-heading text-4xl font-bold text-grey-90;
+  }
+  
+  .heading-2 {
+    @apply font-heading text-3xl font-semibold text-grey-90;
+  }
+  
+  .heading-3 {
+    @apply font-heading text-2xl font-semibold text-grey-90;
   }
 }

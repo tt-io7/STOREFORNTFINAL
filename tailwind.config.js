@@ -21,6 +21,21 @@ module.exports = {
         padding: "padding-top padding-right padding-bottom padding-left",
       },
       colors: {
+        primary: {
+          DEFAULT: "#3B82F6", // Blue
+          light: "#93C5FD",
+          dark: "#1D4ED8",
+        },
+        secondary: {
+          DEFAULT: "#10B981", // Green
+          light: "#6EE7B7",
+          dark: "#047857",
+        },
+        accent: {
+          DEFAULT: "#8B5CF6", // Purple
+          light: "#C4B5FD",
+          dark: "#6D28D9",
+        },
         grey: {
           0: "#FFFFFF",
           5: "#F9FAFB",
@@ -67,6 +82,15 @@ module.exports = {
           "Roboto",
           "Helvetica Neue",
           "Ubuntu",
+          "sans-serif",
+        ],
+        heading: [
+          "Poppins",
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
           "sans-serif",
         ],
       },
