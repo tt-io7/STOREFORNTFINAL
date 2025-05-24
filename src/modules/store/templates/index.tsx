@@ -20,13 +20,18 @@ const StoreTemplate = ({
 
   return (
     <div
-      className="flex flex-col small:flex-row small:items-start py-6 content-container"
+      className="flex flex-col small:flex-row small:items-start py-8 content-container"
       data-testid="category-container"
     >
-      <RefinementList sortBy={sort} />
-      <div className="w-full">
-        <div className="mb-8 text-2xl-semi">
-          <h1 data-testid="store-page-title">All products</h1>
+      <div className="w-full small:w-1/4 small:pr-8 mb-8 small:mb-0">
+        <RefinementList sortBy={sort} />
+      </div>
+      <div className="w-full small:w-3/4">
+        <div className="mb-8">
+          <h1 className="heading-2" data-testid="store-page-title">Shop All Products</h1>
+          <p className="text-ui-fg-subtle mt-2">
+            Discover the latest innovative technology from AndMore Tech
+          </p>
         </div>
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
