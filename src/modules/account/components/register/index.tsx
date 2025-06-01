@@ -18,96 +18,129 @@ const Register = ({ setCurrentView }: Props) => {
 
   return (
     <div
-      className="max-w-sm flex flex-col items-center bg-dark-light rounded-xl p-8 shadow-2xl border border-dark-lighter"
+      className="w-full bg-dark-light/90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-dark-lighter/50 relative overflow-hidden"
       data-testid="register-page"
     >
-      <h1 className="text-large-semi uppercase mb-6 text-dark-text font-bold text-center">
-        Become an AndMore Tech Member
-      </h1>
-      <p className="text-center text-base-regular text-dark-muted mb-4 leading-relaxed">
-        Create your AndMore Tech Member profile, and get access to an enhanced
-        shopping experience.
-      </p>
-      <form className="w-full flex flex-col" action={formAction}>
-        <div className="flex flex-col w-full gap-y-4">
-          <Input
-            label="First name"
-            name="first_name"
-            required
-            autoComplete="given-name"
-            data-testid="first-name-input"
-            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
-          />
-          <Input
-            label="Last name"
-            name="last_name"
-            required
-            autoComplete="family-name"
-            data-testid="last-name-input"
-            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
-          />
-          <Input
-            label="Email"
-            name="email"
-            required
-            type="email"
-            autoComplete="email"
-            data-testid="email-input"
-            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
-          />
-          <Input
-            label="Phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            data-testid="phone-input"
-            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
-          />
-          <Input
-            label="Password"
-            name="password"
-            required
-            type="password"
-            autoComplete="new-password"
-            data-testid="password-input"
-            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
-          />
+      {/* Gradient overlay for visual appeal */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-violet-500/5 rounded-2xl"></div>
+      
+      <div className="relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <h1 className="text-2xl font-bold text-white mb-3 font-heading">
+            Join AndMore Tech
+          </h1>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            Create your member profile and get access to an enhanced shopping experience.
+          </p>
         </div>
-        <ErrorMessage error={message} data-testid="register-error" />
-        <span className="text-center text-dark-muted text-small-regular mt-6">
-          By creating an account, you agree to AndMore Tech&apos;s{" "}
-          <LocalizedClientLink
-            href="/content/privacy-policy"
-            className="underline text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300"
+
+        {/* Form Section */}
+        <form className="space-y-6" action={formAction}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="relative">
+              <Input
+                label="First name"
+                name="first_name"
+                required
+                autoComplete="given-name"
+                data-testid="first-name-input"
+                className="w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/30 transition-all duration-300"
+              />
+            </div>
+            <div className="relative">
+              <Input
+                label="Last name"
+                name="last_name"
+                required
+                autoComplete="family-name"
+                data-testid="last-name-input"
+                className="w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/30 transition-all duration-300"
+              />
+            </div>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="relative">
+              <Input
+                label="Email"
+                name="email"
+                required
+                type="email"
+                autoComplete="email"
+                data-testid="email-input"
+                className="w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/30 transition-all duration-300"
+              />
+            </div>
+            <div className="relative">
+              <Input
+                label="Phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                data-testid="phone-input"
+                className="w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/30 transition-all duration-300"
+              />
+            </div>
+            <div className="relative">
+              <Input
+                label="Password"
+                name="password"
+                required
+                type="password"
+                autoComplete="new-password"
+                data-testid="password-input"
+                className="w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/30 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          {/* Error Message */}
+          {message && (
+            <ErrorMessage error={message} data-testid="register-error" />
+          )}
+
+          {/* Terms and Conditions */}
+          <div className="text-center text-xs text-gray-400 leading-relaxed">
+            By creating an account, you agree to AndMore Tech's{" "}
+            <LocalizedClientLink
+              href="/content/privacy-policy"
+              className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors duration-300"
+            >
+              Privacy Policy
+            </LocalizedClientLink>{" "}
+            and{" "}
+            <LocalizedClientLink
+              href="/content/terms-of-use"
+              className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors duration-300"
+            >
+              Terms of Use
+            </LocalizedClientLink>
+            .
+          </div>
+
+          {/* Join Button */}
+          <SubmitButton 
+            className="w-full bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] focus:ring-2 focus:ring-purple-400/50" 
+            data-testid="register-button"
           >
-            Privacy Policy
-          </LocalizedClientLink>{" "}
-          and{" "}
-          <LocalizedClientLink
-            href="/content/terms-of-use"
-            className="underline text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300"
-          >
-            Terms of Use
-          </LocalizedClientLink>
-          .
-        </span>
-        <SubmitButton 
-          className="w-full mt-6 bg-gradient-to-r from-[#A78BFA] to-[#C4B5FD] hover:from-[#9333EA] hover:to-[#A78BFA] text-white font-semibold border-none transition-all duration-300 transform hover:scale-105" 
-          data-testid="register-button"
-        >
-          Join
-        </SubmitButton>
-      </form>
-      <span className="text-center text-dark-muted text-small-regular mt-6">
-        Already a member?{" "}
-        <button
-          onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          className="underline text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300 font-medium"
-        >
-          Sign in
-        </button>
-        .
-      </span>
+            Create Account
+          </SubmitButton>
+        </form>
+
+        {/* Footer Section */}
+        <div className="mt-8 text-center">
+          <p className="text-gray-400 text-sm">
+            Already a member?{" "}
+            <button
+              onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
+              className="text-purple-400 hover:text-purple-300 font-medium transition-colors duration-300 underline underline-offset-2"
+            >
+              Sign in
+            </button>
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
