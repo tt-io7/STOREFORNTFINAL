@@ -82,21 +82,31 @@ export default async function Home({
       {/* Category Showcase */}
       <div className="content-container py-20">
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">Shop by Category</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
           <CategoryCard 
-            image="https://images.unsplash.com/photo-1551355738-a9e12c9a6709?q=80&w=3264&auto=format&fit=crop"
+            image="/images/categories/phones.jpg"
             title="Phones"
             link="/categories/phones"
           />
           <CategoryCard
-            image="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=3024&auto=format&fit=crop"
+            image="/images/categories/software.jpg"
             title="Software"
             link="/categories/software"
           />
           <CategoryCard
-            image="https://images.unsplash.com/photo-1600003263720-95b45a4035d5?q=80&w=3025&auto=format&fit=crop"
+            image="/images/categories/accessories.jpg"
             title="Accessories"
             link="/categories/accessories"
+          />
+          <CategoryCard
+            image="/images/categories/security.jpg"
+            title="Security"
+            link="/categories/security"
+          />
+          <CategoryCard
+            image="/images/categories/merch.jpg"
+            title="Merch"
+            link="/categories/merch"
           />
         </div>
       </div>
