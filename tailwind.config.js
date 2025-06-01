@@ -40,8 +40,9 @@ module.exports = {
           DEFAULT: "#1F2937", // Main dark background
           light: "#374151",   // Lighter dark sections
           lighter: "#4B5563", // Even lighter for contrast
-          text: "#F9FAFB",    // Light text on dark
-          muted: "#D1D5DB",   // Muted text
+          text: "#FFFFFF",    // Pure white for primary text
+          muted: "#E5E7EB",   // Very light grey for secondary text
+          subtle: "#F3F4F6",  // Almost white for subtle text
         },
         grey: {
           0: "#FFFFFF",

@@ -4,10 +4,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Dark Theme Body */
+/* Dark Theme Body - Force white text everywhere */
 body {
   background-color: #1F2937;
-  color: #F9FAFB;
+  color: #FFFFFF !important;
+}
+
+/* Universal text color overrides to ensure visibility */
+* {
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, input, textarea, select, button {
+  color: #FFFFFF !important;
+}
+
+/* Specific overrides for muted text */
+.text-muted, .text-subtle, .text-gray-600, .text-gray-500, .text-gray-400, [class*="text-ui-fg"] {
+  color: #E5E7EB !important;
+}
+
+/* Lilac accent colors for interactive elements */
+.text-interactive, .text-primary, .text-accent, [class*="text-ui-fg-interactive"] {
+  color: #A78BFA !important;
 }
 
 /* Enhanced Button Styles for Dark Theme */
@@ -65,6 +84,18 @@ body {
 /* Focus States for Dark Theme */
 input:focus, textarea:focus, select:focus {
   @apply outline-none ring-2 ring-purple-400/50 border-purple-400;
+  color: #FFFFFF !important;
+}
+
+/* Form elements visibility */
+input, textarea, select, option {
+  background-color: #374151 !important;
+  color: #FFFFFF !important;
+  border-color: #4B5563 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #9CA3AF !important;
 }
 
 /* Loading Animation */
