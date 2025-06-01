@@ -110,7 +110,7 @@ export default function ProductActions({
 
   return (
     <>
-      <div className="flex flex-col gap-y-2" ref={actionsRef}>
+      <div className="flex flex-col gap-y-6 bg-dark-light rounded-xl p-6 border border-dark-lighter shadow-xl" ref={actionsRef}>
         <div>
           {(product.variants?.length ?? 0) > 1 && (
             <div className="flex flex-col gap-y-4">
@@ -139,7 +139,7 @@ export default function ProductActions({
           onClick={handleAddToCart}
           disabled={!inStock || !selectedVariant || !!disabled || isAdding}
           variant="primary"
-          className="w-full h-10"
+          className="w-full h-12 bg-gradient-to-r from-[#A78BFA] to-[#C4B5FD] hover:from-[#9333EA] hover:to-[#A78BFA] text-white font-semibold border-none transition-all duration-300 transform hover:scale-105"
           isLoading={isAdding}
           data-testid="add-product-button"
         >
