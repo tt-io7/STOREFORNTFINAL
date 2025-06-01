@@ -18,24 +18,25 @@ const Register = ({ setCurrentView }: Props) => {
 
   return (
     <div
-      className="max-w-sm flex flex-col items-center"
+      className="max-w-sm flex flex-col items-center bg-dark-light rounded-xl p-8 shadow-2xl border border-dark-lighter"
       data-testid="register-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">
-        Become a Medusa Store Member
+      <h1 className="text-large-semi uppercase mb-6 text-dark-text font-bold text-center">
+        Become an AndMore Tech Member
       </h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your Medusa Store Member profile, and get access to an enhanced
+      <p className="text-center text-base-regular text-dark-muted mb-4 leading-relaxed">
+        Create your AndMore Tech Member profile, and get access to an enhanced
         shopping experience.
       </p>
       <form className="w-full flex flex-col" action={formAction}>
-        <div className="flex flex-col w-full gap-y-2">
+        <div className="flex flex-col w-full gap-y-4">
           <Input
             label="First name"
             name="first_name"
             required
             autoComplete="given-name"
             data-testid="first-name-input"
+            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
           />
           <Input
             label="Last name"
@@ -43,6 +44,7 @@ const Register = ({ setCurrentView }: Props) => {
             required
             autoComplete="family-name"
             data-testid="last-name-input"
+            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
           />
           <Input
             label="Email"
@@ -51,6 +53,7 @@ const Register = ({ setCurrentView }: Props) => {
             type="email"
             autoComplete="email"
             data-testid="email-input"
+            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
           />
           <Input
             label="Phone"
@@ -58,6 +61,7 @@ const Register = ({ setCurrentView }: Props) => {
             type="tel"
             autoComplete="tel"
             data-testid="phone-input"
+            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
           />
           <Input
             label="Password"
@@ -66,35 +70,39 @@ const Register = ({ setCurrentView }: Props) => {
             type="password"
             autoComplete="new-password"
             data-testid="password-input"
+            className="bg-dark border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
           />
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
-        <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to Medusa Store&apos;s{" "}
+        <span className="text-center text-dark-muted text-small-regular mt-6">
+          By creating an account, you agree to AndMore Tech&apos;s{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
-            className="underline"
+            className="underline text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300"
           >
             Privacy Policy
           </LocalizedClientLink>{" "}
           and{" "}
           <LocalizedClientLink
             href="/content/terms-of-use"
-            className="underline"
+            className="underline text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300"
           >
             Terms of Use
           </LocalizedClientLink>
           .
         </span>
-        <SubmitButton className="w-full mt-6" data-testid="register-button">
+        <SubmitButton 
+          className="w-full mt-6 bg-gradient-to-r from-[#A78BFA] to-[#C4B5FD] hover:from-[#9333EA] hover:to-[#A78BFA] text-white font-semibold border-none transition-all duration-300 transform hover:scale-105" 
+          data-testid="register-button"
+        >
           Join
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
+      <span className="text-center text-dark-muted text-small-regular mt-6">
         Already a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          className="underline"
+          className="underline text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300 font-medium"
         >
           Sign in
         </button>

@@ -20,7 +20,7 @@ const StoreTemplate = ({
 
   return (
     <div
-      className="flex flex-col small:flex-row small:items-start py-8 content-container"
+      className="flex flex-col small:flex-row small:items-start py-8 content-container bg-dark min-h-screen"
       data-testid="category-container"
     >
       <div className="w-full small:w-1/4 small:pr-8 mb-8 small:mb-0">
@@ -28,8 +28,8 @@ const StoreTemplate = ({
       </div>
       <div className="w-full small:w-3/4">
         <div className="mb-8">
-          <h1 className="heading-2" data-testid="store-page-title">Shop All Products</h1>
-          <p className="text-ui-fg-subtle mt-2">
+          <h1 className="heading-2 text-dark-text font-bold" data-testid="store-page-title">Shop All Products</h1>
+          <p className="text-dark-muted mt-2 text-lg">
             Discover the latest innovative technology from AndMore Tech
           </p>
         </div>

@@ -78,7 +78,7 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <LocalizedClientLink
-            className="hover:text-ui-fg-base"
+            className="text-dark-text hover:text-[#A78BFA] transition-colors duration-300 font-medium"
             href="/cart"
             data-testid="nav-cart-link"
           >{`Cart (${totalItems})`}</LocalizedClientLink>
@@ -95,11 +95,11 @@ const CartDropdown = ({
         >
           <Popover.Panel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-dark-light border border-dark-lighter rounded-lg w-[420px] text-dark-text shadow-2xl"
             data-testid="nav-cart-dropdown"
           >
-            <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Cart</h3>
+            <div className="p-4 flex items-center justify-center border-b border-dark-lighter">
+              <h3 className="text-large-semi text-dark-text font-semibold">Cart</h3>
             </div>
             {cartState && cartState.items?.length ? (
               <>
@@ -112,7 +112,7 @@ const CartDropdown = ({
                     })
                     .map((item) => (
                       <div
-                        className="grid grid-cols-[122px_1fr] gap-x-4"
+                        className="grid grid-cols-[122px_1fr] gap-x-4 py-4"
                         key={item.id}
                         data-testid="cart-item"
                       >
@@ -130,10 +130,11 @@ const CartDropdown = ({
                           <div className="flex flex-col flex-1">
                             <div className="flex items-start justify-between">
                               <div className="flex flex-col overflow-ellipsis whitespace-nowrap mr-4 w-[180px]">
-                                <h3 className="text-base-regular overflow-hidden text-ellipsis">
+                                <h3 className="text-base-regular overflow-hidden text-ellipsis text-dark-text font-medium">
                                   <LocalizedClientLink
                                     href={`/products/${item.variant?.product?.handle}`}
                                     data-testid="product-link"
+                                    className="hover:text-[#A78BFA] transition-colors duration-300"
                                   >
                                     {item.title}
                                   </LocalizedClientLink>
@@ -146,6 +147,7 @@ const CartDropdown = ({
                                 <span
                                   data-testid="cart-item-quantity"
                                   data-value={item.quantity}
+                                  className="text-dark-muted text-sm"
                                 >
                                   Quantity: {item.quantity}
                                 </span>
@@ -157,7 +159,7 @@ const CartDropdown = ({
                           </div>
                           <DeleteButton
                             id={item.id}
-                            className="mt-1"
+                            className="mt-1 text-red-400 hover:text-red-300 transition-colors duration-300"
                             data-testid="cart-item-remove-button"
                           >
                             Remove
@@ -166,14 +168,14 @@ const CartDropdown = ({
                       </div>
                     ))}
                 </div>
-                <div className="p-4 flex flex-col gap-y-4 text-small-regular">
+                <div className="p-4 flex flex-col gap-y-4 text-small-regular border-t border-dark-lighter">
                   <div className="flex items-center justify-between">
-                    <span className="text-ui-fg-base font-semibold">
+                    <span className="text-dark-text font-semibold">
                       Subtotal{" "}
-                      <span className="font-normal">(excl. taxes)</span>
+                      <span className="font-normal text-dark-muted">(excl. taxes)</span>
                     </span>
                     <span
-                      className="text-large-semi"
+                      className="text-large-semi text-[#A78BFA] font-bold"
                       data-testid="cart-subtotal"
                       data-value={subtotal}
                     >
@@ -185,7 +187,7 @@ const CartDropdown = ({
                   </div>
                   <LocalizedClientLink href="/cart" passHref>
                     <Button
-                      className="w-full"
+                      className="w-full bg-gradient-to-r from-[#A78BFA] to-[#C4B5FD] hover:from-[#9333EA] hover:to-[#A78BFA] text-white font-semibold border-none transition-all duration-300 transform hover:scale-105"
                       size="large"
                       data-testid="go-to-cart-button"
                     >
@@ -197,15 +199,20 @@ const CartDropdown = ({
             ) : (
               <div>
                 <div className="flex py-16 flex-col gap-y-4 items-center justify-center">
-                  <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
+                  <div className="bg-gradient-to-r from-[#A78BFA] to-[#C4B5FD] text-small-regular flex items-center justify-center w-8 h-8 rounded-full text-white font-semibold">
                     <span>0</span>
                   </div>
-                  <span>Your shopping bag is empty.</span>
+                  <span className="text-dark-muted">Your shopping bag is empty.</span>
                   <div>
                     <LocalizedClientLink href="/store">
                       <>
                         <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <Button 
+                          onClick={close}
+                          className="bg-gradient-to-r from-[#A78BFA] to-[#C4B5FD] hover:from-[#9333EA] hover:to-[#A78BFA] text-white font-semibold border-none transition-all duration-300 transform hover:scale-105"
+                        >
+                          Explore products
+                        </Button>
                       </>
                     </LocalizedClientLink>
                   </div>

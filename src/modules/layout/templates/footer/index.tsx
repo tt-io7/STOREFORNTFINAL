@@ -10,24 +10,38 @@ export default async function Footer() {
   const { product_categories } = await getCategoriesList(0, 6)
 
   return (
-    <footer className="border-t border-ui-border-base w-full bg-grey-5">
+    <footer className="border-t border-dark-lighter w-full bg-dark-light">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-12 md:py-24">
           <div className="flex flex-col gap-y-4">
             <LocalizedClientLink
               href="/"
-              className="font-heading font-semibold text-xl text-primary hover:text-primary-dark transition-colors"
+              className="font-heading font-bold text-xl text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300"
             >
-              AndMore<span className="text-secondary">Tech</span>
+              AndMore<span className="text-[#F59E0B]">Tech</span>
             </LocalizedClientLink>
-            <p className="text-ui-fg-subtle max-w-xs">
+            <p className="text-dark-muted max-w-xs leading-relaxed">
               Your trusted source for cutting-edge technology and innovative solutions. Part of AndMore LLC.
             </p>
+            <div className="flex gap-4 mt-4">
+              <a href="#" className="text-dark-muted hover:text-[#A78BFA] transition-colors duration-300 text-sm font-medium">
+                Facebook
+              </a>
+              <a href="#" className="text-dark-muted hover:text-[#A78BFA] transition-colors duration-300 text-sm font-medium">
+                Twitter
+              </a>
+              <a href="#" className="text-dark-muted hover:text-[#A78BFA] transition-colors duration-300 text-sm font-medium">
+                Instagram
+              </a>
+              <a href="#" className="text-dark-muted hover:text-[#A78BFA] transition-colors duration-300 text-sm font-medium">
+                LinkedIn
+              </a>
+            </div>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {product_categories && product_categories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base font-medium">
+                <span className="txt-small-plus text-dark-text font-semibold">
                   Categories
                 </span>
                 <ul
@@ -48,13 +62,13 @@ export default async function Footer() {
 
                     return (
                       <li
-                        className="flex flex-col gap-2 text-ui-fg-subtle txt-small"
+                        className="flex flex-col gap-2 text-dark-muted txt-small"
                         key={c.id}
                       >
                         <LocalizedClientLink
                           className={clx(
-                            "hover:text-primary transition-colors",
-                            children && "txt-small-plus"
+                            "hover:text-[#A78BFA] transition-colors duration-300",
+                            children && "txt-small-plus font-medium"
                           )}
                           href={`/categories/${c.handle}`}
                           data-testid="category-link"
@@ -67,7 +81,7 @@ export default async function Footer() {
                               children.map((child) => (
                                 <li key={child.id}>
                                   <LocalizedClientLink
-                                    className="hover:text-primary transition-colors"
+                                    className="hover:text-[#A78BFA] transition-colors duration-300"
                                     href={`/categories/${child.handle}`}
                                     data-testid="category-link"
                                   >
@@ -85,12 +99,12 @@ export default async function Footer() {
             )}
             {collections && collections.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base font-medium">
+                <span className="txt-small-plus text-dark-text font-semibold">
                   Collections
                 </span>
                 <ul
                   className={clx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
+                    "grid grid-cols-1 gap-2 text-dark-muted txt-small",
                     {
                       "grid-cols-2": (collections?.length || 0) > 3,
                     }
@@ -99,7 +113,7 @@ export default async function Footer() {
                   {collections?.slice(0, 6).map((c) => (
                     <li key={c.id}>
                       <LocalizedClientLink
-                        className="hover:text-primary transition-colors"
+                        className="hover:text-[#A78BFA] transition-colors duration-300"
                         href={`/collections/${c.handle}`}
                       >
                         {c.title}
@@ -110,16 +124,16 @@ export default async function Footer() {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base font-medium">
+              <span className="txt-small-plus text-dark-text font-semibold">
                 Company
               </span>
-              <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
+              <ul className="grid grid-cols-1 gap-y-2 text-dark-muted txt-small">
                 <li>
                   <a
                     href="#"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     About Us
                   </a>
@@ -129,7 +143,7 @@ export default async function Footer() {
                     href="#"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Contact
                   </a>
@@ -139,7 +153,7 @@ export default async function Footer() {
                     href="#"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Careers
                   </a>
@@ -149,7 +163,7 @@ export default async function Footer() {
                     href="#"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Terms & Conditions
                   </a>
@@ -159,7 +173,7 @@ export default async function Footer() {
                     href="#"
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Privacy Policy
                   </a>
@@ -168,23 +182,14 @@ export default async function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row w-full mb-8 md:mb-12 justify-between text-ui-fg-muted border-t border-ui-border-base pt-6">
+        <div className="flex flex-col md:flex-row w-full mb-8 md:mb-12 justify-between text-dark-muted border-t border-dark-lighter pt-6">
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} AndMore Tech. All rights reserved.
           </Text>
-          <div className="flex gap-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-ui-fg-subtle hover:text-primary transition-colors">
-              Facebook
-            </a>
-            <a href="#" className="text-ui-fg-subtle hover:text-primary transition-colors">
-              Twitter
-            </a>
-            <a href="#" className="text-ui-fg-subtle hover:text-primary transition-colors">
-              Instagram
-            </a>
-            <a href="#" className="text-ui-fg-subtle hover:text-primary transition-colors">
-              LinkedIn
-            </a>
+          <div className="flex gap-x-4 mt-4 md:mt-0">
+            <span className="text-sm text-dark-muted">
+              Built with <span className="text-[#A78BFA]">♥</span> for modern commerce
+            </span>
           </div>
         </div>
       </div>

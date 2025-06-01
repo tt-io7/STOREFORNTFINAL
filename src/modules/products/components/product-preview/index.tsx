@@ -31,23 +31,23 @@ export default async function ProductPreview({
 
   return (
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper" className="flex flex-col h-full overflow-hidden rounded-lg border border-grey-10 hover:border-primary transition-colors duration-200 hover:shadow-md">
-        <div className="relative overflow-hidden">
+      <div data-testid="product-wrapper" className="flex flex-col h-full overflow-hidden rounded-xl border border-dark-lighter bg-dark-light hover:border-[#A78BFA] transition-all duration-300 hover:shadow-2xl hover:shadow-[#A78BFA]/20 transform hover:scale-105">
+        <div className="relative overflow-hidden rounded-t-xl">
           <Thumbnail
             thumbnail={product.thumbnail}
             images={product.images}
             size="full"
             isFeatured={isFeatured}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-5 transition-all duration-200"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-        <div className="flex flex-col justify-between p-4 flex-grow">
-          <Text className="font-medium text-ui-fg-base mb-1" data-testid="product-title">
+        <div className="flex flex-col justify-between p-6 flex-grow">
+          <Text className="font-semibold text-dark-text mb-2 group-hover:text-[#A78BFA] transition-colors duration-300" data-testid="product-title">
             {product.title}
           </Text>
-          <div className="flex items-center justify-between mt-2">
+          <div className="flex items-center justify-between mt-3">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
-            <span className="text-sm text-secondary-dark px-2 py-1 rounded-full bg-secondary bg-opacity-10 font-medium">
+            <span className="text-sm text-[#F59E0B] px-3 py-1 rounded-full bg-[#F59E0B]/10 font-medium border border-[#F59E0B]/20">
               New
             </span>
           </div>

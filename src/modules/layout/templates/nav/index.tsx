@@ -11,8 +11,8 @@ export default async function Nav() {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base shadow-sm">
-        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
+      <header className="relative h-16 mx-auto border-b duration-200 bg-dark border-dark-lighter shadow-lg backdrop-blur-sm">
+        <nav className="content-container txt-xsmall-plus text-dark-muted flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} />
@@ -22,10 +22,10 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="font-heading font-semibold text-xl text-primary hover:text-primary-dark transition-colors"
+              className="font-heading font-bold text-xl text-[#A78BFA] hover:text-[#C4B5FD] transition-colors duration-300"
               data-testid="nav-store-link"
             >
-              AndMore<span className="text-secondary">Tech</span>
+              AndMore<span className="text-[#F59E0B]">Tech</span>
             </LocalizedClientLink>
           </div>
 
@@ -33,7 +33,7 @@ export default async function Nav() {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.NEXT_PUBLIC_FEATURE_SEARCH_ENABLED && (
                 <LocalizedClientLink
-                  className="hover:text-primary transition-colors"
+                  className="text-dark-text hover:text-[#A78BFA] transition-colors duration-300 font-medium"
                   href="/search"
                   scroll={false}
                   data-testid="nav-search-link"
@@ -42,7 +42,7 @@ export default async function Nav() {
                 </LocalizedClientLink>
               )}
               <LocalizedClientLink
-                className="hover:text-primary transition-colors"
+                className="text-dark-text hover:text-[#A78BFA] transition-colors duration-300 font-medium"
                 href="/account"
                 data-testid="nav-account-link"
               >
@@ -52,7 +52,7 @@ export default async function Nav() {
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="hover:text-primary transition-colors flex gap-2"
+                  className="text-dark-text hover:text-[#A78BFA] transition-colors duration-300 flex gap-2 font-medium"
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
