@@ -15,40 +15,40 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
 
   return (
     <div>
-      <Text>
+      <Text className="text-dark-text">
         We have sent the order confirmation details to{" "}
         <span
-          className="text-ui-fg-medium-plus font-semibold"
+          className="text-dark-text font-semibold"
           data-testid="order-email"
         >
           {order.email}
         </span>
         .
       </Text>
-      <Text className="mt-2">
+      <Text className="mt-2 text-dark-text">
         Order date:{" "}
         <span data-testid="order-date">
           {new Date(order.created_at).toDateString()}
         </span>
       </Text>
-      <Text className="mt-2 text-ui-fg-interactive">
+      <Text className="mt-2 text-[#A78BFA] font-semibold">
         Order number: <span data-testid="order-id">{order.display_id}</span>
       </Text>
 
       <div className="flex items-center text-compact-small gap-x-4 mt-4">
         {showStatus && (
           <>
-            <Text>
+            <Text className="text-dark-text">
               Order status:{" "}
-              <span className="text-ui-fg-subtle " data-testid="order-status">
+              <span className="text-dark-muted" data-testid="order-status">
                 {/* TODO: Check where the statuses should come from */}
                 {/* {formatStatus(order.fulfillment_status)} */}
               </span>
             </Text>
-            <Text>
+            <Text className="text-dark-text">
               Payment status:{" "}
               <span
-                className="text-ui-fg-subtle "
+                className="text-dark-muted"
                 sata-testid="order-payment-status"
               >
                 {/* {formatStatus(order.payment_status)} */}

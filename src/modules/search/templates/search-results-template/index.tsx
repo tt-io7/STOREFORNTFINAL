@@ -27,14 +27,14 @@ const SearchResultsTemplate = ({
     <>
       <div className="flex justify-between border-b w-full py-6 px-8 small:px-14 items-center">
         <div className="flex flex-col items-start">
-          <Text className="text-ui-fg-muted">Search Results for:</Text>
-          <Heading>
+          <Text className="text-dark-muted">Search Results for:</Text>
+          <Heading className="text-dark-text">
             {decodeURI(query)} ({ids.length})
           </Heading>
         </div>
         <LocalizedClientLink
           href="/store"
-          className="txt-medium text-ui-fg-subtle hover:text-ui-fg-base"
+          className="txt-medium text-dark-muted hover:text-[#A78BFA] transition-colors duration-300"
         >
           Clear
         </LocalizedClientLink>
@@ -53,7 +53,7 @@ const SearchResultsTemplate = ({
             </div>
           </>
         ) : (
-          <Text className="ml-8 small:ml-14 mt-3">No results.</Text>
+          <Text className="ml-8 small:ml-14 mt-3 text-dark-text">No results.</Text>
         )}
       </div>
     </>

@@ -24,43 +24,41 @@ const LineItemPrice = ({ item, style = "default" }: LineItemPriceProps) => {
   const hasReducedPrice = currentPrice < originalPrice
 
   return (
-    <div className="flex flex-col gap-x-2 text-ui-fg-subtle items-end">
-      <div className="text-left">
-        {hasReducedPrice && (
-          <>
-            <p>
-              {style === "default" && (
-                <span className="text-ui-fg-subtle">Original: </span>
-              )}
-              <span
-                className="line-through text-ui-fg-muted"
-                data-testid="product-original-price"
-              >
-                {convertToLocale({
-                  amount: originalPrice,
-                  currency_code,
-                })}
-              </span>
-            </p>
+    <div className="flex flex-col text-dark-text justify-end h-full">
+      {hasReducedPrice && (
+        <>
+          <p>
             {style === "default" && (
-              <span className="text-ui-fg-interactive">
-                -{getPercentageDiff(originalPrice, currentPrice || 0)}%
-              </span>
+              <span className="text-dark-muted">Original: </span>
             )}
-          </>
-        )}
-        <span
-          className={clx("text-base-regular", {
-            "text-ui-fg-interactive": hasReducedPrice,
-          })}
-          data-testid="product-price"
-        >
-          {convertToLocale({
-            amount: currentPrice,
-            currency_code,
-          })}
-        </span>
-      </div>
+            <span
+              className="line-through text-dark-muted"
+              data-testid="product-unit-original-price"
+            >
+              {convertToLocale({
+                amount: item.subtotal ?? 0,
+                currency_code: item.currency_code,
+              })}
+            </span>
+          </p>
+          {style === "default" && (
+            <span className="text-[#A78BFA] font-semibold">
+              -{Math.round(((item.subtotal! - item.total!) / item.subtotal!) * 100)}%
+            </span>
+          )}
+        </>
+      )}
+      <span
+        className={clx("text-base-regular", {
+          "text-[#A78BFA] font-semibold": hasReducedPrice,
+        })}
+        data-testid="product-unit-price"
+      >
+        {convertToLocale({
+          amount: item.total ?? 0,
+          currency_code: item.currency_code,
+        })}
+      </span>
     </div>
   )
 }
