@@ -7,6 +7,7 @@ import { getRegion } from "@lib/data/regions"
 import { Button } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { Phone, ShoppingBag, Gift, CreditCard, Headphones } from "lucide-react"
+import HeroSlideshow from "@modules/home/components/hero-slideshow"
 
 export const metadata: Metadata = {
   title: "AndMore Tech | Technology for Business & Beyond",
@@ -47,10 +48,10 @@ export default async function Home({
           </div>
         </div>
         
-        {/* Right Side - Product Image */}
+        {/* Right Side - Image Slideshow */}
         <div className="w-full md:w-1/2 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/20 to-transparent z-10"></div>
-          <div className="bg-[url('https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=3270&auto=format&fit=crop')] bg-cover bg-center h-full w-full bg-no-repeat transform hover:scale-105 transition-transform duration-1000"></div>
+          <HeroSlideshow />
         </div>
       </div>
       
