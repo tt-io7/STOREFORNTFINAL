@@ -98,6 +98,31 @@ input::placeholder, textarea::placeholder {
   color: #9CA3AF !important;
 }
 
+/* Table overrides to prevent white backgrounds */
+table, thead, tbody, tr, td, th {
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+}
+
+/* Medusa UI Table overrides */
+[class*="table"] {
+  background-color: transparent !important;
+}
+
+[class*="Table"] {
+  background-color: transparent !important;
+}
+
+/* Container overrides for product images */
+[class*="Container"] {
+  background-color: #374151 !important;
+}
+
+/* Override any remaining white backgrounds */
+.bg-white {
+  background-color: #374151 !important;
+}
+
 /* Loading Animation */
 @keyframes shimmer {
   0% {
