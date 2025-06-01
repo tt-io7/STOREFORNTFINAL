@@ -2,7 +2,88 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "@medusajs/ui/styles";
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Dark Theme Body */
+body {
+  background-color: #1F2937;
+  color: #F9FAFB;
+}
+
+/* Enhanced Button Styles for Dark Theme */
+.btn-primary {
+  @apply bg-gradient-to-r from-purple-500 to-violet-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+}
+
+.btn-outline {
+  @apply bg-transparent border border-gray-500 text-gray-300 hover:bg-gray-700 hover:border-gray-400 font-medium py-2 px-6 rounded-lg transition-all duration-300;
+}
+
+/* Enhanced Typography */
+.font-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent;
+}
+
+/* Enhanced Content Container */
+.content-container {
+  @apply max-w-[1440px] w-full mx-auto px-6 md:px-8;
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6B7280;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Enhanced Card Styles */
+.card-dark {
+  @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300;
+}
+
+/* Focus States for Dark Theme */
+input:focus, textarea:focus, select:focus {
+  @apply outline-none ring-2 ring-purple-400/50 border-purple-400;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #374151 25%, #4B5563 50%, #374151 75%);
+  background-size: 800px 104px;
+}
 
 @layer utilities {
   /* Chrome, Safari and Opera */
@@ -52,10 +133,6 @@
 }
 
 @layer components {
-  .content-container {
-    @apply max-w-[1440px] w-full mx-auto px-6;
-  }
-
   .contrast-btn {
     @apply px-4 py-2 border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors duration-200 ease-in;
   }

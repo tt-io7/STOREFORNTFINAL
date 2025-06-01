@@ -22,19 +22,26 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#A78BFA", // Lighter Purple (was #3B82F6 blue)
+          DEFAULT: "#A78BFA", // Lilac accent
           light: "#C4B5FD",
           dark: "#8B5CF6",
         },
         secondary: {
-          DEFAULT: "#F59E0B", // Gold (was #10B981 green)
+          DEFAULT: "#F59E0B", // Gold accent
           light: "#FCD34D",
           dark: "#D97706",
         },
         accent: {
-          DEFAULT: "#A78BFA", // Lighter Purple (was #8B5CF6)
+          DEFAULT: "#A78BFA", // Lilac accent
           light: "#C4B5FD",
           dark: "#8B5CF6",
+        },
+        dark: {
+          DEFAULT: "#1F2937", // Main dark background
+          light: "#374151",   // Lighter dark sections
+          lighter: "#4B5563", // Even lighter for contrast
+          text: "#F9FAFB",    // Light text on dark
+          muted: "#D1D5DB",   // Muted text
         },
         grey: {
           0: "#FFFFFF",
