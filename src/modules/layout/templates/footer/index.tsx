@@ -38,7 +38,7 @@ export default async function Footer() {
               </a>
             </div>
           </div>
-          <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
+          <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
             {product_categories && product_categories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
                 <span className="txt-small-plus text-dark-text font-semibold">
@@ -129,54 +129,83 @@ export default async function Footer() {
               </span>
               <ul className="grid grid-cols-1 gap-y-2 text-dark-muted txt-small">
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/about"
                     className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     About Us
-                  </a>
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/contact"
                     className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Contact
-                  </a>
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/careers"
                     className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Careers
-                  </a>
+                  </LocalizedClientLink>
                 </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <span className="txt-small-plus text-dark-text font-semibold">
+                Legal
+              </span>
+              <ul className="grid grid-cols-1 gap-y-2 text-dark-muted txt-small">
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/terms-and-conditions"
                     className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Terms & Conditions
-                  </a>
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/privacy-policy"
                     className="hover:text-[#A78BFA] transition-colors duration-300"
                   >
                     Privacy Policy
-                  </a>
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/return-policy"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
+                  >
+                    Return Policy
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/shipping-policy"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
+                  >
+                    Shipping Policy
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/account-terms"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
+                  >
+                    Account Terms
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/modern-slavery-statement"
+                    className="hover:text-[#A78BFA] transition-colors duration-300"
+                  >
+                    Modern Slavery Statement
+                  </LocalizedClientLink>
                 </li>
               </ul>
             </div>
