@@ -14,17 +14,24 @@ const LoginTemplate = () => {
   const [currentView, setCurrentView] = useState("sign-in")
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 relative overflow-hidden">
-      {/* Main centering container */}
-      <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen w-full bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 relative">
+      {/* Absolute centering with multiple fallback methods */}
+      <div 
+        className="fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+          width: '100%'
+        }}
+      >
         <div className="w-full max-w-md mx-auto">
-          <div className="flex justify-center">
-            {currentView === "sign-in" ? (
-              <Login setCurrentView={setCurrentView} />
-            ) : (
-              <Register setCurrentView={setCurrentView} />
-            )}
-          </div>
+          {currentView === "sign-in" ? (
+            <Login setCurrentView={setCurrentView} />
+          ) : (
+            <Register setCurrentView={setCurrentView} />
+          )}
         </div>
       </div>
       
