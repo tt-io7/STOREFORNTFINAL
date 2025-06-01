@@ -22,19 +22,19 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#3B82F6", // Blue
-          light: "#93C5FD",
-          dark: "#1D4ED8",
+          DEFAULT: "#A78BFA", // Lighter Purple (was #3B82F6 blue)
+          light: "#C4B5FD",
+          dark: "#8B5CF6",
         },
         secondary: {
-          DEFAULT: "#10B981", // Green
-          light: "#6EE7B7",
-          dark: "#047857",
+          DEFAULT: "#F59E0B", // Gold (was #10B981 green)
+          light: "#FCD34D",
+          dark: "#D97706",
         },
         accent: {
-          DEFAULT: "#8B5CF6", // Purple
+          DEFAULT: "#A78BFA", // Lighter Purple (was #8B5CF6)
           light: "#C4B5FD",
-          dark: "#6D28D9",
+          dark: "#8B5CF6",
         },
         grey: {
           0: "#FFFFFF",

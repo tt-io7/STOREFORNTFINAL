@@ -32,7 +32,7 @@ export default async function Home({
       {/* Split-Screen Welcome Panel */}
       <div className="flex flex-col md:flex-row min-h-[600px]">
         {/* Left Side - Brand Statement */}
-        <div className="w-full md:w-1/2 bg-[#8B5CF6] flex items-center justify-center p-8 md:p-16">
+        <div className="w-full md:w-1/2 bg-[#A78BFA] flex items-center justify-center p-8 md:p-16">
           <div className="max-w-lg">
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               TECHNOLOGY FOR BUSINESS & BEYOND
@@ -50,7 +50,7 @@ export default async function Home({
         
         {/* Right Side - Image Slideshow */}
         <div className="w-full md:w-1/2 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/20 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#A78BFA]/20 to-transparent z-10"></div>
           <HeroSlideshow />
         </div>
       </div>
@@ -60,19 +60,19 @@ export default async function Home({
         <div className="content-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="flex items-center">
-              <ShoppingBag className="text-[#8B5CF6] w-6 h-6 mr-3" />
+              <ShoppingBag className="text-[#A78BFA] w-6 h-6 mr-3" />
               <span className="text-gray-800">Free shipping over $150</span>
             </div>
             <div className="flex items-center">
-              <Gift className="text-[#8B5CF6] w-6 h-6 mr-3" />
+              <Gift className="text-[#A78BFA] w-6 h-6 mr-3" />
               <span className="text-gray-800">30-day returns</span>
             </div>
             <div className="flex items-center">
-              <Headphones className="text-[#8B5CF6] w-6 h-6 mr-3" />
+              <Headphones className="text-[#A78BFA] w-6 h-6 mr-3" />
               <span className="text-gray-800">Expert customer support</span>
             </div>
             <div className="flex items-center">
-              <CreditCard className="text-[#8B5CF6] w-6 h-6 mr-3" />
+              <CreditCard className="text-[#A78BFA] w-6 h-6 mr-3" />
               <span className="text-gray-800">Secure checkout</span>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default async function Home({
         <div className="content-container">
           <div className="flex flex-col md:flex-row items-center justify-between mb-12">
             <h2 className="font-heading text-3xl md:text-4xl font-bold">Featured Products</h2>
-            <LocalizedClientLink href="/store" className="text-[#8B5CF6] hover:text-[#6D28D9] font-medium mt-4 md:mt-0">
+            <LocalizedClientLink href="/store" className="text-[#A78BFA] hover:text-[#8B5CF6] font-medium mt-4 md:mt-0">
               View All Products
             </LocalizedClientLink>
           </div>
@@ -121,7 +121,7 @@ export default async function Home({
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">Why Choose AndMore Tech</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300 rounded-lg">
-            <div className="w-16 h-16 bg-[#8B5CF6] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#A78BFA] rounded-full flex items-center justify-center mx-auto mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -130,7 +130,7 @@ export default async function Home({
             <p className="text-gray-600">Premium business technology solutions built to last</p>
           </div>
           <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300 rounded-lg">
-            <div className="w-16 h-16 bg-[#8B5CF6] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#A78BFA] rounded-full flex items-center justify-center mx-auto mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
               </svg>
@@ -139,7 +139,7 @@ export default async function Home({
             <p className="text-gray-600">Dedicated consultation and technical assistance</p>
           </div>
           <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300 rounded-lg">
-            <div className="w-16 h-16 bg-[#8B5CF6] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#A78BFA] rounded-full flex items-center justify-center mx-auto mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -148,7 +148,7 @@ export default async function Home({
             <p className="text-gray-600">Top value without compromising quality</p>
           </div>
           <div className="text-center p-6 hover:shadow-lg transition-shadow duration-300 rounded-lg">
-            <div className="w-16 h-16 bg-[#8B5CF6] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#A78BFA] rounded-full flex items-center justify-center mx-auto mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
@@ -170,9 +170,9 @@ export default async function Home({
             <input 
               type="email" 
               placeholder="Your email address"
-              className="flex-grow p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#8B5CF6]"
+              className="flex-grow p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#A78BFA]"
             />
-            <Button variant="primary" className="bg-[#8B5CF6] hover:bg-[#6D28D9] text-white px-6 py-3">
+            <Button variant="primary" className="bg-[#A78BFA] hover:bg-[#8B5CF6] text-white px-6 py-3">
               Subscribe
             </Button>
           </div>
@@ -197,7 +197,7 @@ function CategoryCard({
       <div className="relative overflow-hidden rounded-lg h-80 border border-gray-100">
         <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/70 to-transparent z-10"></div>
         <div className="bg-cover bg-center h-full w-full transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${image})` }}></div>
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-[#8B5CF6]/40 transition-opacity duration-500 z-20">
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-[#A78BFA]/40 transition-opacity duration-500 z-20">
           <span className="text-white font-heading text-2xl font-semibold px-6 py-3 border-2 border-white">Shop Now</span>
         </div>
         <div className="absolute bottom-0 left-0 p-6 z-20">
