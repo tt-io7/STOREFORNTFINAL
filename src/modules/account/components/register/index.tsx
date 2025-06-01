@@ -18,7 +18,7 @@ const Register = ({ setCurrentView }: Props) => {
 
   return (
     <div
-      className="w-full bg-dark-light/95 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-dark-lighter/50 relative overflow-hidden"
+      className="w-full max-w-md bg-dark-light/95 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-dark-lighter/50 relative overflow-hidden"
       data-testid="register-page"
     >
       {/* Gradient overlay for visual appeal */}
