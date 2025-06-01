@@ -60,12 +60,12 @@ const Shipping: React.FC<ShippingProps> = ({
   }, [isOpen])
 
   return (
-    <div className="bg-white">
+    <div className="bg-dark-light border border-dark-lighter rounded-lg p-6">
       <div className="flex flex-row items-center justify-between mb-6">
         <Heading
           level="h2"
           className={clx(
-            "flex flex-row text-3xl-regular gap-x-2 items-baseline",
+            "flex flex-row text-3xl-regular gap-x-2 items-baseline text-dark-text font-bold",
             {
               "opacity-50 pointer-events-none select-none":
                 !isOpen && cart.shipping_methods?.length === 0,
@@ -74,7 +74,7 @@ const Shipping: React.FC<ShippingProps> = ({
         >
           Delivery
           {!isOpen && (cart.shipping_methods?.length ?? 0) > 0 && (
-            <CheckCircleSolid />
+            <CheckCircleSolid className="text-[#A78BFA]" />
           )}
         </Heading>
         {!isOpen &&
@@ -84,7 +84,7 @@ const Shipping: React.FC<ShippingProps> = ({
             <Text>
               <button
                 onClick={handleEdit}
-                className="text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
+                className="text-[#A78BFA] hover:text-[#9333EA] font-medium transition-colors duration-300"
                 data-testid="edit-delivery-button"
               >
                 Edit
@@ -103,10 +103,11 @@ const Shipping: React.FC<ShippingProps> = ({
                     value={option.id}
                     data-testid="delivery-option-radio"
                     className={clx(
-                      "flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active",
+                      "flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-lg px-8 mb-2 bg-dark hover:bg-dark-lighter transition-colors duration-300",
                       {
-                        "border-ui-border-interactive":
+                        "border-[#A78BFA] bg-[#A78BFA]/10":
                           option.id === selectedShippingMethod?.id,
+                        "border-dark-lighter": option.id !== selectedShippingMethod?.id,
                       }
                     )}
                   >
@@ -114,9 +115,9 @@ const Shipping: React.FC<ShippingProps> = ({
                       <Radio
                         checked={option.id === selectedShippingMethod?.id}
                       />
-                      <span className="text-base-regular">{option.name}</span>
+                      <span className="text-base-regular text-dark-text font-medium">{option.name}</span>
                     </div>
-                    <span className="justify-self-end text-ui-fg-base">
+                    <span className="justify-self-end text-dark-text font-semibold">
                       {convertToLocale({
                         amount: option.amount!,
                         currency_code: cart?.currency_code,
@@ -135,7 +136,7 @@ const Shipping: React.FC<ShippingProps> = ({
 
           <Button
             size="large"
-            className="mt-6"
+            className="mt-6 w-full bg-gradient-to-r from-[#A78BFA] to-[#C4B5FD] hover:from-[#9333EA] hover:to-[#A78BFA] text-white font-semibold border-none transition-all duration-300 transform hover:scale-105"
             onClick={handleSubmit}
             isLoading={isLoading}
             disabled={!cart.shipping_methods?.[0]}
@@ -149,10 +150,10 @@ const Shipping: React.FC<ShippingProps> = ({
           <div className="text-small-regular">
             {cart && (cart.shipping_methods?.length ?? 0) > 0 && (
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                <Text className="txt-medium-plus text-dark-text mb-1 font-semibold">
                   Method
                 </Text>
-                <Text className="txt-medium text-ui-fg-subtle">
+                <Text className="txt-medium text-dark-muted">
                   {selectedShippingMethod?.name}{" "}
                   {convertToLocale({
                     amount: selectedShippingMethod?.amount!,
@@ -164,7 +165,7 @@ const Shipping: React.FC<ShippingProps> = ({
           </div>
         </div>
       )}
-      <Divider className="mt-8" />
+      <Divider className="mt-8 border-dark-lighter" />
     </div>
   )
 }
