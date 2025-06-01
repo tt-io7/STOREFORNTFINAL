@@ -84,8 +84,8 @@ const ShippingAddress = ({
   return (
     <>
       {customer && (addressesInRegion?.length || 0) > 0 && (
-        <Container className="mb-6 flex flex-col gap-y-4 p-5">
-          <p className="text-small-regular">
+        <Container className="mb-6 flex flex-col gap-y-4 p-5 bg-dark-light border border-dark-lighter rounded-lg">
+          <p className="text-small-regular text-dark-text font-medium">
             {`Hi ${customer.first_name}, do you want to use one of your saved addresses?`}
           </p>
           <AddressSelect
@@ -108,6 +108,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-first-name-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
         <Input
           label="Last name"
@@ -117,6 +118,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-last-name-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
         <Input
           label="Address"
@@ -126,6 +128,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-address-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
         <Input
           label="Company"
@@ -134,6 +137,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           autoComplete="organization"
           data-testid="shipping-company-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
         <Input
           label="Postal code"
@@ -143,6 +147,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-postal-code-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
         <Input
           label="City"
@@ -152,6 +157,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-city-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
         <CountrySelect
           name="shipping_address.country_code"
@@ -170,6 +176,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-province-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
       </div>
       <div className="my-8">
@@ -192,6 +199,7 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-email-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
         <Input
           label="Phone"
@@ -200,6 +208,7 @@ const ShippingAddress = ({
           value={formData["shipping_address.phone"]}
           onChange={handleChange}
           data-testid="shipping-phone-input"
+          className="bg-dark-light border-dark-lighter text-dark-text focus:border-[#A78BFA] focus:ring-[#A78BFA]"
         />
       </div>
     </>

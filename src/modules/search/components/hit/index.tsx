@@ -27,17 +27,17 @@ const Hit = ({ hit }: HitProps) => {
     >
       <Container
         key={hit.id}
-        className="flex sm:flex-col gap-2 w-full p-4 shadow-elevation-card-rest hover:shadow-elevation-card-hover items-center sm:justify-center"
+        className="flex sm:flex-col gap-2 w-full p-4 bg-dark-light/95 border border-dark-lighter/50 rounded-lg shadow-lg hover:shadow-xl hover:bg-dark-light items-center sm:justify-center transition-all duration-300"
       >
         <Thumbnail
           thumbnail={hit.thumbnail}
           size="square"
-          className="group h-12 w-12 sm:h-full sm:w-full"
+          className="group h-12 w-12 sm:h-full sm:w-full rounded-lg overflow-hidden"
         />
         <div className="flex flex-col justify-between group">
           <div className="flex flex-col">
             <Text
-              className="text-ui-fg-subtle"
+              className="text-dark-text font-medium hover:text-[#A78BFA] transition-colors duration-300"
               data-testid="search-result-title"
             >
               {hit.title}
